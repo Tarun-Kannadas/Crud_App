@@ -35,11 +35,9 @@ fun UserPage(viewModel: UserViewModel, navController: NavHostController) {
         }
     }
 
-    // State to manage the Edit Dialog
     var showEditDialog by remember { mutableStateOf(false) }
     var userToEdit by remember { mutableStateOf<Users?>(null) }
 
-    // NEW: State to manage the Delete Dialog
     var showDeleteDialog by remember { mutableStateOf(false) }
     var userToDelete by remember { mutableStateOf<Users?>(null) }
 
@@ -130,7 +128,6 @@ fun UserPage(viewModel: UserViewModel, navController: NavHostController) {
         )
     }
 
-    // --- NEW: THE DELETE CONFIRMATION DIALOG ---
     if (showDeleteDialog && userToDelete != null) {
         AlertDialog(
             onDismissRequest = { showDeleteDialog = false },
